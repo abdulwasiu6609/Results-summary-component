@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Results summary component</title>
+
+
+  <style>
+    * {
+
+      box-sizing: border-box;
+      font-family: Hanken Grotesk;
+    }
+
+    .container {
+      display: flex;
+      width: 600px;
+      height: 400px;
+      margin: 100px auto;
+      border-radius: 24px;
+      box-shadow: 2px 2px 2px 2px hsl(224, 30%, 27%);
+    }
+
+    .result {
+      width: 300px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: hsl(0, 0%, 100%);
+
+      margin: auto auto;
+      border-radius: 24px;
+      background: linear-gradient(hsla(256, 72%, 46%, 0.7), hsl(241, 81%, 54%));
+    }
+
+    .result .title {
+      margin-top: 30px;
+      margin-bottom: 0;
+      font-weight: normal;
+
+    }
+
+    .chart {
+
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-top: 30px;
+      background-color: hsla(256, 72%, 46%, 1);
+    }
+
+    .chart h1 {
+      text-align: center;
+      font-size: 48px
+    }
+
+    .chart p {
+      text-align: center;
+      margin-top: -30px;
+      font-size: 18px;
+      font-weight: 100;
+      color: gray;
+    }
+
+    .result>p {
+      margin-top: 0;
+      padding: 0 10%;
+      text-align: center;
+      font-weight: normal;
+      font-size: medium;
+    }
+
+    .result>h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .summary {
+
+      width: 300px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      margin: auto auto;
+      padding: 5px 20px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      ;
+
+
+
+
+    }
+
+    .same {
+      display: flex;
+      gap: 5px;
+
+    }
+
+    .summary h2 {
+      color: hsl(224, 30%, 27%);
+    }
+
+    .one {
+      background-color: rgba(255, 87, 87, 0.1);
+      padding: 0 10px;
+      border-radius: 20px;
+      color: rgb(255, 87, 87);
+    }
+
+    .two {
+      background-color: hsla(39, 100%, 56%, 0.1);
+      padding: 0 10px;
+      border-radius: 20px;
+      color: hsl(39, 100%, 56%);
+    }
+
+    .three {
+      background-color: hsla(166, 100%, 37%, 0.1);
+      padding: 0 10px;
+      border-radius: 20px;
+      color: hsl(166, 100%, 37%);
+    }
+
+    .four {
+      background-color: hsla(234, 85%, 45%, 0.1);
+      padding: 0 10px;
+      border-radius: 20px;
+      color: hsl(234, 85%, 45%);
+      ;
+    }
+
+    .dark {
+      color: hsl(224, 30%, 27%);
+    }
+
+    .light {
+      color: gray;
+    }
+
+    button {
+      width: 100%;
+      height: 36px;
+      border-radius: 20px;
+      background-color: hsl(224, 30%, 27%);
+      color: white;
+      border: 0;
+      margin-top: 20px;
+    }
+
+    button:hover,
+    button:active {
+      background-color: hsla(256, 72%, 46%, 1);
+    }
+
+    @media only screen and (max-width: 375px) {
+      body {
+        margin: 0;
+      }
+
+      .container {
+        flex-direction: column;
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+
+      }
+
+      .result {
+        width: 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+      }
+
+      button {
+        margin-bottom: 30px;
+        padding: 10px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="result">
+      <p class="title">Your Result</p>
+      <div class="chart">
+        <h1>76</h1>
+        <p>of 100</p>
+      </div>
+      <h2>Great</h2>
+      <p>You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+    <div class="summary">
+      <h2>Summary</h2>
+      <div class="summary-item one">
+        <div class="same">
+          <img src="icon-reaction.svg" alt="Reaction icon">
+          <p>Reaction</p>
+        </div>
+        <div>
+          <p class="dark">80 <span class="light"> / 100</span></p>
+        </div>
+      </div>
+      <div class="summary-item two">
+        <div class="same">
+          <img src="icon-memory.svg" alt="Memory icon">
+          <p>Memory</p>
+        </div>
+        <div>
+          <p class="dark">92 <span class="light"> / 100</span></p>
+        </div>
+      </div>
+      <div class="summary-item three">
+        <div class="same">
+          <img src="icon-verbal.svg" alt="verbal icon">
+          <p>Verbal</p>
+        </div>
+        <div>
+          <p class="dark">61 <span class="light"> / 100</span></p>
+        </div>
+      </div>
+      <div class="summary-item four">
+        <div class="same">
+          <img src="icon-visual.svg" alt="visual icon">
+          <p>Visual</p>
+        </div>
+        <div>
+          <p class="dark">72 <span class="light"> / 100</span></p>
+        </div>
+      </div>
+
+      <button>Continue</button>
+
+    </div>
+  </div>
+</body>
+
+</html>
